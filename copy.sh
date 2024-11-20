@@ -1,3 +1,3 @@
 make
-cp ./_output/bin/* ~/.gopath/bin
-cp ./_output/share/lima/lima* ~/.gopath/bin
+cp -rf ./_output/bin/* ~/.gopath/bin
+cp -rf ./_output/share/lima/lima* ~/.gopath/bin
