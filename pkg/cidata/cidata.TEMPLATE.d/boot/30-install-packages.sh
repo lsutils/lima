@@ -34,6 +34,10 @@ if [ "${LIMA_CIDATA_SKIP_DEFAULT_DEPENDENCY_RESOLUTION}" = 1 ]; then
 	exit 0
 fi
 
+sed -i "s@archive.ubuntu.com@mirrors.tuna.tsinghua.edu.cn@g" /etc/apt/sources.list.d/ubuntu.sources   || echo "ignore"
+sed -i "s@security.ubuntu.com@mirrors.tuna.tsinghua.edu.cn@g" /etc/apt/sources.list.d/ubuntu.sources  || echo "ignore"
+sed -i "s@ports.ubuntu.com@mirrors.tuna.tsinghua.edu.cn@g" /etc/apt/sources.list.d/ubuntu.sources  || echo "ignore"
+
 if head -c 4 "$(command -v apt-get)" | grep -qP '\x7fELF' >/dev/null 2>&1; then
 	pkgs=""
 	if [ "${LIMA_CIDATA_MOUNTTYPE}" = "reverse-sshfs" ]; then
