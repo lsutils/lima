@@ -180,8 +180,6 @@ func FillDefault(y, d, o *LimaYAML, filePath string) {
 	}
 	y.VMType = ptr.Of(ResolveVMType(y.VMType))
 
-	println(filePath, d.VMType, o.VMType, ptr.Of(ResolveVMType(y.VMType)))
-
 	if y.OS == nil {
 		y.OS = d.OS
 	}
